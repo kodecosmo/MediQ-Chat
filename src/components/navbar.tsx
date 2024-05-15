@@ -54,9 +54,9 @@ export const Navbar = () => {
                                     <UserButton />
                                 </div>
                             ) : (
-                                <div className='text-slate-600 hover:text-slate-900 cursor-pointer  px-4 py-2 md:py-0 flex flex-row' >
+                                <div className='text-slate-600 hover:text-slate-900 cursor-pointer   md:py-0 flex flex-row' >
                                     <SignInButton mode="modal">
-                                        <button className="rounded-full border border-secondary bg-transparent px-4 py-1.5 text-base hover:text-white hover:bg-black">
+                                        <button className=" border border-secondary bg-transparent px-4 py-1.5 text-base hover:text-white hover:bg-black">
                                             <span>Sign in</span>
                                         </button>
                                     </SignInButton>
