@@ -34,17 +34,17 @@ export const Navbar = () => {
                         </div>
                         <div className={`${isMenuOpen ? 'flex' : 'hidden'
                             } absolute flex-col top-full left-0 w-full bg-white pb-5 md:pb-0 md:static md:flex md:flex-row md:gap-x-10 content-center align-middle items-center z-50`}>
-                            <Link href='/community/join'>
+                            <Link href='#'>
                                 <div className='text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row' >
                                     Test  <IconArrowUpRight height={13} />
                                 </div>
                             </Link>
-                            <Link target='_blank' href='https://lu.ma/thedailygrind'>
+                            <Link href='#'>
                                 <div className='text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row' >
                                    Test <Sparkle height={13} />
                                 </div>
                             </Link>
-                            <Link href='/community'>
+                            <Link href='#'>
                                 <div className='text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row' >
                                     Community
                                 </div>
