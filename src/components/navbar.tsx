@@ -18,7 +18,7 @@ export const Navbar = () => {
 
     return (
         <div>
-            <nav className=" py-3 bg-white top-0 z-50 fixed w-full">
+            <nav className=" bg-white mt-3 z-50 fixed w-full border h-[50px] items-center content-center">
                 <div className='px-5 md:px-16 flex flex-row justify-between items-center text-sm'>
                     <Link href='/'>
                         <div className='flex flex-row justify-between items-center'>
@@ -34,14 +34,14 @@ export const Navbar = () => {
                         </div>
                         <div className={`${isMenuOpen ? 'flex' : 'hidden'
                             } absolute flex-col top-full left-0 w-full bg-white pb-5 md:pb-0 md:static md:flex md:flex-row md:gap-x-10 content-center align-middle items-center z-50`}>
-                            <Link href='#'>
+                            <Link target='_blank' href='https://www.ko-de.org/'>
                                 <div className='text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row' >
-                                    Test  <IconArrowUpRight height={13} />
+                                    MediQ  <IconArrowUpRight height={13} />
                                 </div>
                             </Link>
-                            <Link href='#'>
+                            <Link target='_blank' href='https://www.mediq.help/'>
                                 <div className='text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row' >
-                                   Test <Sparkle height={13} />
+                                   kode <Sparkle height={13} />
                                 </div>
                             </Link>
                             <Link href='#'>
