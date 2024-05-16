@@ -2,8 +2,34 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello
-    </main>
+    // chat interface
+    <>
+      {/* navigation */}
+      <nav>
+        Navbar goes here
+      </nav>
+
+      {/* main componenets */}
+      <main>
+
+        {/* sidebar */}
+        <section>
+          sidebar
+        </section>
+
+        {/* chat interface */}
+        <section>
+          {/* welcome message and about description */}
+          <div>
+            greetings what is mediq
+          </div>
+
+          {/* input field */}
+          <div>
+            input field 
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
