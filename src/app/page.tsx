@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
-import { userAgent } from "next/server";
-import { Navbar } from "@/Components/navbar";
-import { Sidebar } from "@/Components/sidebar";
+import { Navbar } from "@/app/components/navbar";
+import { Sidebar } from "@/app/components/sidebar";
+
+
+
+
 
 
 export default function Home() {
@@ -12,7 +15,7 @@ export default function Home() {
   return (
     <>
 
-      {/* <Navbar /> */}
+      <Navbar />
 
       <main className="flex ">
         <Sidebar />
@@ -20,7 +23,7 @@ export default function Home() {
         Hello {user && user.fullName}
       </main>
 
-      
+
     </>
   );
 }
