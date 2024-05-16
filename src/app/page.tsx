@@ -1,35 +1,20 @@
+'use client';
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
+import { userAgent } from "next/server";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
+
+  const { user } = useUser();
+
   return (
-    // chat interface
     <>
-      {/* navigation */}
-      <nav>
-        Navbar goes here
-      </nav>
-
-      {/* main componenets */}
-      <main>
-
-        {/* sidebar */}
-        <section>
-          sidebar
-        </section>
-
-        {/* chat interface */}
-        <section>
-          {/* welcome message and about description */}
-          <div>
-            greetings what is mediq
-          </div>
-
-          {/* input field */}
-          <div>
-            input field 
-          </div>
-        </section>
-      </main>
+      <Navbar />
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        
+      Hello {user && user.fullName}
+    </main>
     </>
   );
 }
