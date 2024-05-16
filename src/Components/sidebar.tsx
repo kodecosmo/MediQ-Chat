@@ -19,12 +19,12 @@ export const Sidebar = () => {
 
         <div className="mt-5 inline-flex items-center gap-3 py-3 px-4 bg-[#e6eaf1] rounded-[50px] text-[14px] text-gray-500">
           <Image src={assets.plus_icon} className="w-5" alt="add" />
-          {extended ? <p>New chat</p> : null}
+          {extended ? <p>New Emergency</p> : null}
         </div>
 
         {extended ? (
           <div className="flex flex-col ">
-            <p className="mt-8 mb-5">Recent</p>
+            <p className="mt-8 mb-5">Recent First-aid</p>
 
             <div className="flex items-start gap-3 p-3 pr-10 rounded-[50px] text-[#282828] cursor-pointer hover:bg-[#e2e6eb]">
               <Image
@@ -32,7 +32,7 @@ export const Sidebar = () => {
                 className="w-5"
                 alt="message-tag"
               />
-              <p>What is react...</p>
+              <p>First aid for a...</p>
             </div>
           </div>
         ) : null}
