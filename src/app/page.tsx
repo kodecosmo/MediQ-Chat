@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
-import { userAgent } from "next/server";
+import { Navbar } from "@/components/navbar";
+import { Sidebar } from "lucide-react";
 
-import { Sidebar } from "../components/sidebar";
-import { Navbar } from "../components/navbar";
+
+
 
 
 export default function Home() {
@@ -13,10 +14,10 @@ export default function Home() {
   return (
     <>
 
-      {/* <Navbar /> */}
+     <Navbar />
 
       <main className="flex ">
-        <Sidebar />
+       <Sidebar />
 
         Hello {user && user.fullName}
       </main>
