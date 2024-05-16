@@ -11,16 +11,16 @@ export default function Home() {
 
   return (
     <>
+
       {/* <Navbar /> */}
 
-      <main className="">
-        {/* Hello {user && user.fullName} */}
+      <main className="flex ">
+        <Sidebar />
 
-        {/* sidebar */}
-        <section>
-          <Sidebar />
-        </section>
+        Hello {user && user.fullName}
       </main>
+
+      
     </>
   );
 }
