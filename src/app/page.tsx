@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import { Navbar } from "@/components/navbar";
-import { Sidebar } from "lucide-react";
+import { Sidebar } from "@/components/sidebar";
+
 
 
 
