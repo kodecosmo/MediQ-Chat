@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
-import { userAgent } from "next/server";
-import { Navbar } from "@/Components/navbar";
-import { Sidebar } from "@/Components/sidebar";
+import { Navbar } from "@/app/components/navbar";
+import { Sidebar } from "@/app/components/sidebar";
 import { ChatArea } from "@/Components/chatArea";
+
+
+
+
 
 
 export default function Home() {
@@ -13,7 +16,7 @@ export default function Home() {
   return (
     <>
 
-      {/* <Navbar /> */}
+      <Navbar />
 
       <main className="flex min-h-screen">
         <Sidebar />
