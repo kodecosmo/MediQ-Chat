@@ -22,7 +22,7 @@ export const Navbar = () => {
                 <div className='md:px-16 flex flex-row justify-between items-center text-sm'>
                     <Link href='/'>
                         <div className='flex flex-row justify-between items-center'>
-                            LOGO
+                            MedIQ
                             {/* <Image src={logo} width={34} height={10} alt='logo' /> */}
                         </div>
                     </Link>
