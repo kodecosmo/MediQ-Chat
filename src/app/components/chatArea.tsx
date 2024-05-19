@@ -1,17 +1,16 @@
+"use client"
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../../../public/assets/assets";
 
-import {
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
 import { useUser } from "@clerk/nextjs";
 
 export const ChatArea = () => {
   const { isSignedIn, user } = useUser();
+  const [message, setMessage] = useState('');
 
   return (
     <div className="flex-1 min-h-screen pb-[15vh] relative">
@@ -21,7 +20,7 @@ export const ChatArea = () => {
         <div className="flex gap-5">
           {!isSignedIn ? (
             <SignInButton mode="modal">
-              <button className=" border border-secondary bg-transparent px-4 py-1.5 text-base hover:text-white hover:bg-black">
+              <button className="mt-5 inline-flex items-center gap-3 py-3 px-4 bg-[#e6eaf1] rounded-[50px] text-[14px] text-gray-500 hover:bg-[#afb2b8] hover:text-white">
                 <span>LogIn</span>
               </button>
             </SignInButton>
@@ -34,7 +33,7 @@ export const ChatArea = () => {
           ) : (
             <div className="text-slate-600 hover:text-slate-900 cursor-pointer   md:py-0 flex flex-row">
               <SignUpButton mode="modal">
-                <button className=" border border-secondary bg-transparent px-4 py-1.5 text-base hover:text-white hover:bg-black">
+                <button className="mt-5 inline-flex items-center gap-3 py-3 px-4 bg-[#e6eaf1] rounded-[50px] text-[14px] text-gray-500 hover:bg-[#afb2b8] hover:text-white">
                   <span>Sign in</span>
                 </button>
               </SignUpButton>
@@ -46,11 +45,22 @@ export const ChatArea = () => {
       <div className="max-w-[900px] m-auto">
         <div className="my-12 text-[56px] text-[#c4c7c5] font-semibold p-5">
           <p>
-            <span className="bg-">Hello, Shakthi</span>
+            <span className="bg-">Hello, </span>
+            {isSignedIn ? <span> {user?.firstName}</span> : "Guest"}
           </p>
 
           <p>What is your Emergency?</p>
         </div>
+
+        {isSignedIn ? (
+          <div className="text-[20px] text-[#585858] font-semibold p-5">
+            Downloaded First Aid
+          </div>
+        ) : (
+          <div className="text-[20px] text-[#585858] font-semibold p-5">
+            Quick Recommendations
+          </div>
+        )}
 
         <div className="grid grid-cols-4 gap-4 p-5">
           <div className="h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]">
@@ -103,6 +113,7 @@ export const ChatArea = () => {
             type="text"
             placeholder="Describe your emergency"
             className="flex-1 flex-wrap bg-transparent border-none outline-none p-2 text-[16px]"
+            onChange={(e) => setMessage(e.target.value)}
           />
           <div className="flex gap-4 items-center">
             <Image
@@ -119,11 +130,12 @@ export const ChatArea = () => {
               src={assets.send_icon}
               alt="send icon"
               className="w-6 cursor-pointer"
+              onClick={() => alert(`Message sent successfully: ${message}`)}
             />
           </div>
         </div>
 
-        <p className="bottom-info">All rights recerved by MedIQ&copy; kode</p>
+        {/* <p className="text-[14px] my-4 mx-auto align-middle font-medium">All rights recerved by MedIQ&copy; kode</p> */}
       </div>
     </div>
   );
