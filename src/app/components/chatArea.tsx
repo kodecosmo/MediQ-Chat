@@ -2,35 +2,49 @@ import Image from "next/image";
 import React from "react";
 import { assets } from "../../../public/assets/assets";
 
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 import { useUser } from "@clerk/nextjs";
 
 export const ChatArea = () => {
-
-    const { isSignedIn, user } = useUser();
+  const { isSignedIn, user } = useUser();
 
   return (
     <div className="flex-1 min-h-screen pb-[15vh] relative">
       <div className="flex items-center justify-between text-[22px] p-5 text-[#585858]">
-        <div className="flex flex-row justify-between items-center">
-          MedIQ
-        </div>
+        <div className="flex flex-row justify-between items-center">MedIQ</div>
 
-        {isSignedIn ? (
-          <div className="text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row">
-            <UserButton />
-          </div>
-        ) : (
-          <div className="text-slate-600 hover:text-slate-900 cursor-pointer   md:py-0 flex flex-row">
+        <div className="flex gap-5">
+          {!isSignedIn ? (
             <SignInButton mode="modal">
               <button className=" border border-secondary bg-transparent px-4 py-1.5 text-base hover:text-white hover:bg-black">
-                <span>Sign in</span>
+                <span>LogIn</span>
               </button>
             </SignInButton>
-          </div>
-        )}
-        {/* <Navbar /> */}
+          ) : null}
+
+          {isSignedIn ? (
+            <div className="text-slate-600 hover:text-slate-900 cursor-pointer hover:underline px-4 py-2 md:py-0 flex flex-row">
+              <UserButton />
+            </div>
+          ) : (
+            <div className="text-slate-600 hover:text-slate-900 cursor-pointer   md:py-0 flex flex-row">
+              <SignUpButton mode="modal">
+                <button className=" border border-secondary bg-transparent px-4 py-1.5 text-base hover:text-white hover:bg-black">
+                  <span>Sign in</span>
+                </button>
+              </SignUpButton>
+            </div>
+          )}
+          {/* <Navbar /> */}
+        </div>
       </div>
 
       <div className="max-w-[900px] m-auto">
