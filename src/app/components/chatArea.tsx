@@ -3,11 +3,8 @@ import React from "react";
 import { assets } from "../../../public/assets/assets";
 
 import {
-  ClerkProvider,
   SignInButton,
   SignUpButton,
-  SignedIn,
-  SignedOut,
   UserButton,
 } from "@clerk/nextjs";
 
@@ -43,7 +40,6 @@ export const ChatArea = () => {
               </SignUpButton>
             </div>
           )}
-          {/* <Navbar /> */}
         </div>
       </div>
 
