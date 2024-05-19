@@ -1,13 +1,16 @@
 import Image from 'next/image'
 import React from 'react'
 import { assets } from '../../../public/assets/assets'
+import { Navbar } from './navbar'
 
 export const ChatArea = () => {
   return (
     <div className='flex-1 min-h-screen pb-[15vh] relative'>
         <div className="flex items-center justify-between text-[22px] p-5 text-[#585858]">
-            <p>MedIQ</p>
-            <Image src={assets.user_icon} alt='user icon' className='w-10 rounded-full'/>
+            {/* <p>MedIQ</p>
+            <Image src={assets.user_icon} alt='user icon' className='w-10 rounded-full'/> */}
+
+            <Navbar />
         </div>
         
         <div className="max-w-[900px] m-auto">
