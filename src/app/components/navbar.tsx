@@ -19,10 +19,10 @@ export const Navbar = () => {
     return (
         <div>
             <nav className=" bg-white mt-3 z-50 fixed w-full border h-[50px] items-center content-center">
-                <div className='px-5 md:px-16 flex flex-row justify-between items-center text-sm'>
+                <div className='md:px-16 flex flex-row justify-between items-center text-sm'>
                     <Link href='/'>
                         <div className='flex flex-row justify-between items-center'>
-                            LOGO
+                            MedIQ
                             {/* <Image src={logo} width={34} height={10} alt='logo' /> */}
                         </div>
                     </Link>
